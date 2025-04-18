@@ -29,15 +29,6 @@ const first = _.first(arr);
 - Először tanuld meg nulláról, hogyan lehet felépíteni egy megoldást (például SPA-t), aztán térj át a keretrendszerekre és használd a best practice-ket.
 
 
-### Népszerű név szerint:
-
-- **React**: Facebook fejleszti.
-- **Angular**: Google fejleszti.
-- **Vue**: Közösségi fejlesztés, célja a React és Angular előnyeinek ötvözése.
-- (Továbbiak: Svelte, Ember.js, stb.)
-
-
-
 
 ### Kell-e keretrendszer?
 

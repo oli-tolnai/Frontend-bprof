@@ -238,6 +238,10 @@ let age: number = 22;
 
 
 
+
+
+
+
 <br><br><br>
 
 # TANANYAG: Angular, Frameworkök és Könyvtárak
@@ -250,11 +254,12 @@ let age: number = 22;
 - Az app kódja formálható és struktúrálható (js könyvtár ezt nem csinálja)
 - _Előny:_ Komplett megoldásokat kínálnak a fejlesztés szinte minden részére, emiatt támogatják a projekt struktúrálását, a moduláris kódbázist és az újrafelhasználhatóságot.
 
-### Néhány keretrendszer
+### Népszerű keretrendszerek
 ```
-React -> facebook
-Vue	-> célja a react és angular akkori pozitív előnyös részei összegzése 
-Angular -> google				
+- React -> facebook
+- Vue	-> Közösségi fejlesztés, célja a React és Angular előnyeinek ötvözése.
+- Angular -> google
+- (Továbbiak: Svelte, Ember.js, stb.)
 ```
 *Feladattól függ hogy kell e keretrendszer*
 
