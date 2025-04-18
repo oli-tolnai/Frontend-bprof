@@ -32,7 +32,7 @@ Ha a feladat külön kéri, mindig hozz létre saját CSS fájlt, és ne csak a 
 Ha a forrásfájl egy mappában található, a relatív elérési utat pontosan add meg:
 `href="./bootstrap.css"`
 Ne csak `href="bootstrap.css"` legyen, mert bár ez működik Live Server-rel, a deploy (élesítés) során könnyen eltörhetnek a hivatkozások. A forrásfájlok elérési útjának követése és helyes megadása nagyon fontos! Ha ez nincs ott akkor a root mappában fogja keresni
-![Image](https://github.com/user-attachments/assets/29776e7c-48d1-40e9-a3aa-0cf53946c999) 
+![relativUtvonal](https://github.com/user-attachments/assets/29776e7c-48d1-40e9-a3aa-0cf53946c999) 
 - **Formázási problémák javítása**:
 Ha elcsúszik a formázás vagy rendezetlen a kód, VS Code-ban az **Alt + Shift + F** billentyűparancsot használd a gyors formázáshoz.
 - **Bootstrap táblázat (table) használata**:
@@ -216,28 +216,30 @@ A `setTimeout` callback-je a Web API-hoz kerül, majd a callback queue-ba helyez
 
 - Lehetővé teszi, hogy felhasználói interakciók, szerverválaszok vagy egyéb aszinkron események ne állítsák meg a fő futási szálat.
 - Ha nem érted, mi történik a háttérben, könnyen hibás aszinkron kódot írhatsz (pl. race condition, deadlock).
+<hr><br><br><br>
+
+
+
+# TANANYAG: TypeScript (TS)
+
+
+**Mi az a TypeScript?**
+- TypeScript = superset of JavaScript | *superset* = a js kiterjesztése
+![supersetOfJs](https://github.com/user-attachments/assets/01efaf39-5763-4cbc-b04f-7335056d13b4)
+- A TypeScript a JavaScript „supersetje”, vagyis a JavaScript kibővítése.
+- Minden, ami JavaScript, az TypeScript-ben is érvényes – de a TypeScript ad hozzá típusosságot, OOP-tulajdonságokat (osztályok, interfészek), fejlettebb szerkesztés támogatást.
+- Kód:
+
+```ts
+let age: number = 22;
+```
 
 
 
 
+<br><br><br>
 
-
-
-
-
-
-
-# TANANYAG: typescript
-
-typescript = superset of JS
-superset = a js kiterjesztése *ábra2*
-
-**Snake
-a kígyó blokkok tömbje
-
-
-
-# TANANYAG: angular
+# TANANYAG: Angular, Frameworkök és Könyvtárak
 
 Az angular egy keretrendszer (framework)
 	- sok eszköz együttes használata (a keretrendszerek komplexebbek)
