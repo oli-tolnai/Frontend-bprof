@@ -1,7 +1,8 @@
-# Frontend 9 szerda 04.16
+# <span style="font-variant:small-caps;">Frontend 9 szerda 04.16</span> 
+<br>
 
+# TANANYAG: Frontend gyakorlati és elméleti zh eredményértékelés
 
-## TANANYAG: Frontend gyakorlati és elméleti zh eredményértékelés
 
 ### Témakörök:
 
@@ -38,9 +39,9 @@ Ha elcsúszik a formázás vagy rendezetlen a kód, VS Code-ban az **Alt + Shift
     - Ismerd a Bootstrap `table` működését (osztályok, például `table`, `table-striped` stb.).
     - Tudnod kell, hogyan lehet JavaScript-ből hivatkozni a táblázat egyes elemeire.
     - A táblázat szerkezete:
-        - `&lt;thead&gt;`: Fejléc, ide kerülnek a címkék
-        - `&lt;tbody&gt;`: Ide generál a JavaScript dinamikusan sorokat (pl. adat beolvasás után)
-    - Példa: A `&lt;tbody&gt;`-ba alapból nem írunk semmit, oda a JS tölti be az adatokat.
+        - `<thead&gt>`: Fejléc, ide kerülnek a címkék
+        - `<tbodyy`: Ide generál a JavaScript dinamikusan sorokat (pl. adat beolvasás után)
+    - Példa: A `<tbody>`-ba alapból nem írunk semmit, oda a JS tölti be az adatokat.
 - **JSON beolvasása és megjelenítése JS-sel táblázatban**:
     - A `fetch()` vagy más adatlekérő módszerek segítségével tölts be JSON fájlt.
     - A JSON elemeit különböző JavaScript ciklusokkal (pl. `forEach`, `map`) jelenítsd meg táblázat soronként.
@@ -64,7 +65,7 @@ Ha elcsúszik a formázás vagy rendezetlen a kód, VS Code-ban az **Alt + Shift
 - **Async/await ismerete**:
     - Az aszinkron adatkezelés modern JavaScript-ben alap. Ismerd az `async/await` használatát, működését, és tipikus hibáit!
 - **Inline CSS**:
-    - Kivételes esetben (egy-egy elemhez) használható, de inkább külön CSS fájlban vagy `&lt;style&gt;` blokkban add meg a stílusokat!
+    - Kivételes esetben (egy-egy elemhez) használható, de inkább külön CSS fájlban vagy `<style>` blokkban add meg a stílusokat!
 - **JS: createElement és innerText nem láncolható**:
     - Például hibás:
 
@@ -98,6 +99,7 @@ function doSomething(callback) {
 }
 ```
 
+Mi az a callback: https://www.youtube.com/watch?v=_LsQy_oAAx4
 
 ### Ábrák szerepe
 
@@ -179,8 +181,9 @@ Az event loop folyamatosan figyeli, hogy a call stack üres-e. Ha igen, a callba
 
 [MDN Event Loop Ábra](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#the_event_loop)
 
+
 ```
-[ Call Stack ] &lt;-- Event Loop &lt;-- [ Callback Queue ]
+[ Call Stack ] <-- Event Loop <-- [ Callback Queue ]
         ^                                   |
         +------ Web APIs ---- fetch, setTimeout, stb. 
 ```
@@ -191,7 +194,7 @@ Az event loop folyamatosan figyeli, hogy a call stack üres-e. Ha igen, a callba
 ```js
 console.log('Első');
 
-setTimeout(() =&gt; {
+setTimeout(() => {
   console.log('Második (asynchronous)');
 }, 0);
 
@@ -216,26 +219,12 @@ A `setTimeout` callback-je a Web API-hoz kerül, majd a callback queue-ba helyez
 
 
 
-./ használjuk relatív megadás, mert tárhely feltöltés esetén e nélkül nem fog működni
-pl.: `./bootstrap.css` *ábra1*
-ha ez nincs ott akkor a root mappába fogja keresni
-
-**Fontosak az ábrák jegyzetelésnél
-
-
-*Csináljunk magunknak gyakorlófeladatokat
 
 
 
-típus feladatok begyakorlása nem rendes tanulás
 
 
 
-Mi az a callback: https://www.youtube.com/watch?v=_LsQy_oAAx4
-
-
-mennyit kell készülni a tárgyra:
-1 kredit = 25-30 munkaóra (kontakt +önálló)
 
 
 # TANANYAG: typescript
