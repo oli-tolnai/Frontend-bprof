@@ -268,59 +268,133 @@ let age: number = 22;
 - Folyamatosan újabb keretrendszerek jelennek meg, ráadásul egyes keretrendszerekre is készülnek új „framework-ök” (pl. js → Vue → Nuxt.js).
 - Egyet megtanulva azonban könnyen tudsz boldogulni a többivel is, mert a szemléletük, architektúrájuk hasonló.
 
+<br>
 
+### Könyvtárak (Libraries) és különbségük a keretrendszerekkel szemben
 
+- **Könyvtár (lib, library):** Előre megírt, újrahasznosítható kódrészletek, függvények vagy modulok gyűjteménye.
+    - Példa: Egy képfeldolgozó vagy grafikai library, amit egyszerűen behívhatsz a projektedbe.
+    - Ezek nem adnak meg projekt struktúrát és fejlesztési mintákat – csak bizonyos feladatok megoldásához nyújtanak funkciókat.
+    - Példakód:
 
-------------------------- angulart szembeállítjuk a föggvénykönyvtárakat
-függvény könyvtárak libs()
-	- előre megírt kód snippetek	
-	- xyDtect(...) nem formálja és nem struktúrálja
+```js
+// Pl. Lodash egy gyakori JS könyvtár
+import _ from 'lodash';
+const arr = [1, 2, 3, 4];
+const first = _.first(arr);
+```
+
+- **Keretrendszer (framework):**
+    - Egy komplett, összefüggő megoldásrendszer, sok előre gyártott eszközzel: routing, state management, komponensstruktúra, stb.
+    - Tipikus „best practice” megoldásokat használ, nem kell mindent nulláról írni.
+    - Példa:
+        - Routing: Angularban, React Routerben, Vue Routerben mind adott.
+        - Auth/login: Keretrendszerekben legtöbbször van előre kidolgozott megoldás vagy integráció.
+- **Fő különbség**:
+    - Könyvtárat (lib) te használsz, azt hívod meg ott, ahol akarod.
+    - Keretrendszer (framework) diktálja, hogyan épül fel az alkalmazás – a te kódod „illeszkedik” bele a framework által definiált struktúrába.
 	
 
--------------------------
-**AJAX -> Asynchronous JavaScript and XML
-https://systemoutofmemory.com/cdn/shop/articles/ajax_f4b39b0c-ffc9-47a4-bea0-e0c4a151d088_1024x1024.png?v=1533603180
 
-keretrendszereket akár úgy is el tudjuk nevezni, hogy **SPA** -> Single Page Application
-SPA-> nincs oldal újratöltés, az ajax hívások ilyenek voltak
+### A helyes tanulási sorrend
 
-spa lifecycle: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjmKBXRgu33o1BgGfc0MwgAaJh4vynbDG9rQ&s
-
-Az AJAX nem egy darab technológia, hanem meglévőek összessége: async, XMLHttpRequest, XML/JSON
-
-** XMLHttpRequest -> XHR 
-ez még a mai napig is velünk van
-kérdés:
-hol tudjuk megnézni és mi az XHR?:
-developer nézet -> network -> filter kereső alatt Fecth/XHR
-
-Az oldal nem töltődik őjra csak a benne lévő tertalma *ábra3*
+- Először tanuld meg nulláról, hogyan lehet felépíteni egy megoldást (például SPA-t), aztán térj át a keretrendszerekre és használd a best practice-ket.
 
 
-----------
-** JQuery ** - régebben használták 
-	- **lib!** (nem keretrendszer)
-	https://www.w3schools.com/jquery/trysel.asp
-	- John Resig
+
+### Kell-e keretrendszer?
+
+- **Nem mindig szükséges!**
+    - Kis, egyszerűbb projekthez, gyors prototípushoz elég egy-egy library vagy magad által írt JS.
+    - Nagy, összetett, bővíthető és karbantartható alkalmazásokhoz (pl. vállalati rendszerek) viszont megéri keretrendszert használni.
+---
+<br><br><br>
+
+### SPA – Single Page Application
+
+- Ezeket gyakran modern keretrendszerekkel készítik.
+- **SPA**: Az egész alkalmazás egyetlen oldalon fut (tipikusan index.html), és az adatokat AJAX/Fetch/HTTP-kérésekkel/hívásokkal dinamikusan tölti be, oldalfrissítés nélkül.
+
+	![spaLifecycle](https://github.com/user-attachments/assets/2d1f06b8-f8fd-4ea3-afab-7cd1945036f9)
+
+
+
+### AJAX – Az SPA-k őse
+
+- **AJAX** = Asynchronous JavaScript And XML
+- Lehetővé tette, hogy a weboldal frissítése nélkül dinamikus adatokat kérjünk le a szervertől (például JSON formátumban) és mutassunk meg a felhasználónak.
+- Nincs teljes oldalfrissítés, csak az adatok frissülnek.
+
+	![spa](https://github.com/user-attachments/assets/f674d62f-7041-46e6-9a68-cda60599b0d9)
+
+
+
+### AJAX és XHR részletek
+
+- **AJAX** nem önálló technológia, hanem **meglévő eszközök kombinációja**:
+    - `XMLHttpRequest` (XHR) objektum a kérések kezelésére.
+		- Mai napig velünk van
+    - Adatformátumok (XML/JSON).
+    - Aszinkron JavaScript logika.
+- **XHR kérések** ma is használatosak (rövidítés: **XHR**).
+A böngésző fejlesztői eszközein (DevTools) a **Network** fülön a **Fetch/XHR** szekcióban láthatók ezek a kérések.
+
+	_Interjú tipp:_ Sok helyen kérdeznek XHR-ről, ne feledd, hogy ez a klasszikus AJAX megvalósítás módja!
+
+	![AJAX](https://github.com/user-attachments/assets/a02a6ea4-03d4-4fd4-ac4e-3b888e2964d4)
+
+
+
+### jQuery és szerepe
+
+- **jQuery** egy JavaScript könyvtár *`(lib)`*, nem keretrendszer, ami régebben nagy népszerűségnek örvendett.
+    - _Előnyei_ anno:
+        - Egységesítette a böngészők közötti különbségeket (pl. event kezelés).
+        - Egyszerű DOM manipuláció (pl. `$('#elem').slideToggle()`).
+        - Szintaxis rövidség (pl. `$('.class')` helyett `document.querySelectorAll`).
+    - _Hanyatlás oka_: A modern JavaScript (ES6+) és CSS3 megoldások kivetkőztették a szükségességét.
+    - _Fejlesztő_: John Resig (korábbi Microsoft mérnök).
+	- [JQuery Selector](https://www.w3schools.com/jquery/trysel.asp)
+
+<br><br>
+
+
+
+
+## Angular	
 	
-	
--------------
-### Angular	
-	
-https://angular.dev/tools/cli/setup-local
+![angular](https://github.com/user-attachments/assets/148cfedd-b31f-4b87-9705-88875369ddd6)
+
+### Projekt létrehozás és CLI
+
+[Setup Angular Cli](https://angular.dev/tools/cli/setup-local)
+
+- **CLI** -> *command line interface*
+- **Angular CLI** → *The Angular CLI is a command-line interface tool which allows you to scaffold, develop, test, deploy, and maintain Angular applications directly from a command shell.*
+
+
+
+**Angular CLI** telepítése:
+
+```bash
 npm install -g @angular/cli
-CLI -> command line interface
+```
 
-`ng new demo-app --standalone=false` -> új projekt - ng - angular rövidítése
+**Új projekt** indítása:
 
-ezután `sass` kiválasztás
-ezután: `N` 
-`l`
-`cd demo app`
+```bash
+ng new demo-app --standalone=false
+```
 
-src mappa:
-index.html -> app-root - minden amit írunk ide vagyis ennek helyére fog kerülni
+**Kérdések** a generálásnál:
+- _CSS preprocesszor_: Válaszd pl a `SASS`-t 
+- _SSR (Server-Side Rendering)_: Írjuk be hogy `N`, tehát nemmel válaszoljunk.
+- Ezután: `l` majd `cd demo app`
 
+
+
+`src mappa` → `index.html` → `<app-root></app-root>` = Minden amit a komponensekbe írunk az `app-root`-ba, vagyis ennek helyére fog kerülni
+ 
 app mappa:
 app.component.sepc.ts ts fáljok tesztelésére van (ki lehet törölni)
 
