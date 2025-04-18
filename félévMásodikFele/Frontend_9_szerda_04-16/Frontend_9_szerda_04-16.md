@@ -1,16 +1,15 @@
-munkahely: evosoft
 # Frontend 9 szerda 04.16
 
-## ZH
+**ZH:**
+<br>
 Ea kifejtős: 17/20
-
+<br>
 Ea teszt 10/10
-
+<br>
 Gyak: 6/10
-
+<br>
 82,5%
-
-
+<br><br>
 ./ használjuk relatív megadás, mert tárhely feltöltés esetén e nélkül nem fog működni
 pl.: `./bootstrap.css` *ábra1*
 ha ez nincs ott akkor a root mappába fogja keresni
