@@ -226,7 +226,7 @@ A `setTimeout` callback-je a Web API-hoz kerül, majd a callback queue-ba helyez
 **Mi az a TypeScript?**
 - TypeScript = superset of JavaScript | *superset* = a js kiterjesztése
 
-- ![supersetOfJs](https://github.com/user-attachments/assets/ac9bdd50-eae7-4f6a-91b3-f24a78ab56e6)
+	![supersetOfJs](https://github.com/user-attachments/assets/ac9bdd50-eae7-4f6a-91b3-f24a78ab56e6)
 - A TypeScript a JavaScript „supersetje”, vagyis a JavaScript kibővítése.
 - Minden, ami JavaScript, az TypeScript-ben is érvényes – de a TypeScript ad hozzá típusosságot, OOP-tulajdonságokat (osztályok, interfészek), fejlettebb szerkesztés támogatást.
 - Kód:
