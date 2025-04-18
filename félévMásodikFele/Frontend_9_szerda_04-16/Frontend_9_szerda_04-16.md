@@ -4,8 +4,11 @@ munkahely: evosoft
 ## ZH
 
 Ea kifejtős: 17/20
+
 Ea teszt 10/10
+
 Gyak: 6/10
+
 82,5%
 
 
