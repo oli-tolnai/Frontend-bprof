@@ -2,7 +2,6 @@ munkahely: evosoft
 # Frontend 9 szerda 04.16
 
 ## ZH
-
 Ea kifejtős: 17/20
 
 Ea teszt 10/10
