@@ -242,18 +242,28 @@ let age: number = 22;
 
 # TANANYAG: Angular, Frameworkök és Könyvtárak
 
-Az angular egy keretrendszer (framework)
-	- sok eszköz együttes használata (a keretrendszerek komplexebbek)
-	- az app kódja formálható és struktúrálható (js könyvtár ezt nem csinálja)
-	- előre megírt `best-prectice` dolgok használata
-						'-> "nem kell feltalálni a kereket"
-	
-	-*React -> facebook
-	-*Vue	-> célja a react és angular akkori pozitív előnyös részeit összegzése 
-	-*Angular -> google				
-framework hell: js -> vue.js -> nuxt.js
+### Angular – Miért keretrendszer?
 
-feladattól függ hogy kell e keretrendszer
+- **Angular** egy fejlett keretrendszer (framework), amit a Google fejleszt.
+- A keretrendszerek (pl. Angular, React, Vue) a frontenden egységes szerkezetet, best practice-ket adnak ("nem kell feltalálni a kereket") , támogatnak routingot, állapotkezelést, űrlapkezelést, stb.
+- A keretrendszer sok eszköz együttes használata, így ezek komplexebbek is mint például egy library
+- Az app kódja formálható és struktúrálható (js könyvtár ezt nem csinálja)
+- _Előny:_ Komplett megoldásokat kínálnak a fejlesztés szinte minden részére, emiatt támogatják a projekt struktúrálását, a moduláris kódbázist és az újrafelhasználhatóságot.
+
+### Néhány keretrendszer
+```
+React -> facebook
+Vue	-> célja a react és angular akkori pozitív előnyös részei összegzése 
+Angular -> google				
+```
+*Feladattól függ hogy kell e keretrendszer*
+
+### Framework Hell
+
+- Folyamatosan újabb keretrendszerek jelennek meg, ráadásul egyes keretrendszerekre is készülnek új „framework-ök” (pl. js → Vue → Nuxt.js).
+- Egyet megtanulva azonban könnyen tudsz boldogulni a többivel is, mert a szemléletük, architektúrájuk hasonló.
+
+
 
 
 ------------------------- angulart szembeállítjuk a föggvénykönyvtárakat
