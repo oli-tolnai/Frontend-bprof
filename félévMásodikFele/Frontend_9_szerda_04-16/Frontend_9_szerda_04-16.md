@@ -69,18 +69,18 @@ Ha elcsúszik a formázás vagy rendezetlen a kód, VS Code-ban az **Alt + Shift
 - **JS: createElement és innerText nem láncolható**:
     - Például hibás:
 
-```js
-document.createElement('div').innerText = 'szöveg';
-```
+    ```js
+    document.createElement('div').innerText = 'szöveg';
+    ```
 
-    - Helyesen:
+- Helyesen:
 
-```js
-const elem = document.createElement('div');
-elem.innerText = 'szöveg';
-```
+    ```js
+    const elem = document.createElement('div');
+    elem.innerText = 'szöveg';
+    ```
 
-    - Az utasításokat külön sorban, egymás után írd le, ne láncold össze őket.
+- Az utasításokat külön sorban, egymás után írd le, ne láncold össze őket.
 
 ---
 
@@ -143,12 +143,12 @@ Ismerned kell a szakmai szókincset, tudnod kell magyarázni ábrákat, folyamat
 Vizsgán nincs Google, tehát tudnod kell fejből!
 Példa:
 
-```js
-fetch('adatok.json')
-  .then(response =&gt; response.json())
-  .then(data =&gt; console.log(data))
-  .catch(error =&gt; console.error(error));
-```
+    ```js
+    fetch('adatok.json')
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data))
+    .catch(error =&gt; console.error(error));
+    ```
 
 - **Kihívás**: Légy tisztában az aszinkron működéssel, hibakezeléssel (`catch`), és a JSON feldolgozásával.
 
@@ -231,9 +231,9 @@ A `setTimeout` callback-je a Web API-hoz kerül, majd a callback queue-ba helyez
 - Minden, ami JavaScript, az TypeScript-ben is érvényes – de a TypeScript ad hozzá típusosságot, OOP-tulajdonságokat (osztályok, interfészek), fejlettebb szerkesztés támogatást.
 - Kód:
 
-```ts
-let age: number = 22;
-```
+    ```ts
+    let age: number = 22;
+    ```
 
 
 
@@ -277,12 +277,12 @@ let age: number = 22;
     - Ezek nem adnak meg projekt struktúrát és fejlesztési mintákat – csak bizonyos feladatok megoldásához nyújtanak funkciókat.
     - Példakód:
 
-```js
-// Pl. Lodash egy gyakori JS könyvtár
-import _ from 'lodash';
-const arr = [1, 2, 3, 4];
-const first = _.first(arr);
-```
+        ```js
+        // Pl. Lodash egy gyakori JS könyvtár
+        import _ from 'lodash';
+        const arr = [1, 2, 3, 4];
+        const first = _.first(arr);
+        ```
 
 - **Keretrendszer (framework):**
     - Egy komplett, összefüggő megoldásrendszer, sok előre gyártott eszközzel: routing, state management, komponensstruktúra, stb.
