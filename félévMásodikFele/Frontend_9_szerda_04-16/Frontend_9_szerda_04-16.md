@@ -537,7 +537,7 @@ Az Angular **strukturális direktívákat** kínál a sablonban (HTML-ben) tört
 ### Példa használat:
 
 ```html
-<p>{{ item }}</p>
+<p *ngFor="let item of increments">{{ item }}</p>
 ```
 
 - **Mit jelent ez?**
@@ -559,7 +559,7 @@ export class AppComponent {
 #### HTML (app.component.html):
 
 ```html
-</p><p>{{ item }}</p>
+<p *ngFor="let item of increments">{{ item }}</p>
 ```
 
 
