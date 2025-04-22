@@ -39,8 +39,8 @@ Ha elcsúszik a formázás vagy rendezetlen a kód, VS Code-ban az **Alt + Shift
     - Ismerd a Bootstrap `table` működését (osztályok, például `table`, `table-striped` stb.).
     - Tudnod kell, hogyan lehet JavaScript-ből hivatkozni a táblázat egyes elemeire.
     - A táblázat szerkezete:
-        - `<thead&gt>`: Fejléc, ide kerülnek a címkék
-        - `<tbodyy`: Ide generál a JavaScript dinamikusan sorokat (pl. adat beolvasás után)
+        - `<thead>`: Fejléc, ide kerülnek a címkék
+        - `<tbody>`: Ide generál a JavaScript dinamikusan sorokat (pl. adat beolvasás után)
     - Példa: A `<tbody>`-ba alapból nem írunk semmit, oda a JS tölti be az adatokat.
 - **JSON beolvasása és megjelenítése JS-sel táblázatban**:
     - A `fetch()` vagy más adatlekérő módszerek segítségével tölts be JSON fájlt.
