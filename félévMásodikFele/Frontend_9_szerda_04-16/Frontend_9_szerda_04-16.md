@@ -145,9 +145,9 @@ Példa:
 
     ```js
     fetch('adatok.json')
-    .then(response =&gt; response.json())
-    .then(data =&gt; console.log(data))
-    .catch(error =&gt; console.error(error));
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
     ```
 
 - **Kihívás**: Légy tisztában az aszinkron működéssel, hibakezeléssel (`catch`), és a JSON feldolgozásával.
