@@ -121,7 +121,7 @@ az api hívásokat ki tudjuk szervezni servicek-be ezt fogjuk a kövi órán meg
 
     ***Ezek a komponensek mind az app komponens mappáján belül találhatóak meg külön almappákban***
 
-### A kiszervezett kis komponenseket fel tudunk használni másik html fájlokban.
+### Kiszervezett kis komponenseket fel tudunk használni másik html fájlokban.
 Például: 
  - van nekünk olyan komponensünk hogy `nav` és a<br>
  `nav.component.html`-ben megcsináljuk a navigációs komponeneseket<br>
@@ -143,6 +143,9 @@ Például:
 
 *komponeneses elrendezés nagy extrája, hogy minden komponenesnek külön css-se van és ha egyikben beállítjuk pl az összes `p` tag-re hogy piros legyen, akkor csak az adott komponenensen belül lévő html-ben lévő `p` tag-ek lesznek pirosak*
 
+---
+
+
 A navigációs rész elkészítésénél azt akarjuk megoldani, hogy ne egy új oldal nyíljon meg amikor létrehozni akarunk új developert. Ezért azt az oldalt nem `href` segítségével fogjuk hozzáadni.<br>
 Ugyanis a `href` mindig egy oldalújratöltés csinál, de nekünk angularban ez most nem jó. Meg lehetne oldani akár `href`-vel is: `preventDefault()` alapvetű működést abortálni lehet és saját metúdussal megírhatjuk hogy mi történjen 
 
@@ -157,7 +160,7 @@ routerLink="/edit"
 Azonban ez egyelőre még nem fog működni ezért két lépést még meg kell tennünk:
 
 Az `app-routing.module.ts`-ben megírjuk az alábbi részt:
-routes-on belül kell megadnuunk a routs-okat.
+routes-on belül kell megadnuunk a routes-okat.
 ```js
 const routes: Routes = [
   { path: "", redirectTo: "list", pathMatch: "full" }, // ha nincs beírva semmi, akkor ezt (jelent esetben `list`) tölti be
@@ -168,7 +171,7 @@ const routes: Routes = [
 ];
 ```
 
-Fontos az enter leütése a component-ek beírásakor meg csak akkor imporálja be azokat:
+Fontos az enter leütése a component-ek beírásakor mert csak akkor imporálja be azokat:
 ```ts
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
@@ -192,47 +195,48 @@ Az `app.component.html`-be be kell illeszteni az alábbi sort:
 ``` 
 
 
-### Tehát a lépések az alábbiak_
+### Tehát a lépések az alábbiak:
 1. routerLink
 2. routing beállítása
 3. `<router-outlet>`
 
-
+----
 ### Ha Bootstrap-et is használunk akkor **FONTOS** hogy azt a fő `INDEX.HTML`-be rakjuk bele
 
 Az `index.html`-ben lévő változtatásokat nem kezeli az angular automatikusan ezért leállítjuk az egészet majd `ng serve`-vel újraindítjuk
 
 
-Ha rákeresünk: [bootstrap footer](https://getbootstrap.com/docs/5.3/components/navbar/#external-content), akkor találunk olyan példákat ahol nincs példakód ami ki lehetne másolni.
+Ha rákeresünk: [bootstrap footer](https://getbootstrap.com/docs/5.3/components/navbar/#external-content), akkor találunk olyan példákat ahol nincs példakód amit ki lehetne másolni.
 - Ezért inspect -> megkeressük a footer-t -> jobbklikk -> copy element -> bemásoljuk a sajátunkba
 
 
-[nav bar](https://getbootstrap.com/docs/5.3/components/navbar/) esetén ha ilyen dropdown fajtát rakunk bele akkor lehet kell hozzá a bootstrap js script is
+[nav bar](https://getbootstrap.com/docs/5.3/components/navbar/) esetén ha ilyen dropdown fajtát rakunk bele akkor valószínűle hozzá kell adni a bootstrap js script-et is
 
 
-[Gombok](https://getbootstrap.com/docs/5.0/components/buttons/#button-tags) esetén a bootstrap `href`-eket használ ezért ezt át kell rakni routerLink-re
+[Gombok](https://getbootstrap.com/docs/5.0/components/buttons/#button-tags) esetén a bootstrap `href`-eket használ ezért ezt át kell rakni `routerLink`-re
 
 Containerek helyett lehet használni ezeket: `mx-5 my-5` (marginok), így pl zoomolásnál jobban megtartja a kinézetet és kesébé csúsznak el az elemek.
 
-
+---
 
 ### Kövi lépés a ListComponent elkészítése:
 
 
 Elsőnek legeneráltunk egy developer osztályt majd a 
-`developer.ts` -ben megcsináljuk a tulajdonásokat
+`developer.ts` -ben megcsináljuk a tulajdonságokat
 
 `list.component.ts`<br>
-`load()` metódussal betöltjül majd a localstorage-ból a dolgokat **(kövi órán ezt lecseréjük az api hívásokra)**<br>
+`load()` -> betöltjül majd a localstorage-ból a dolgokat **(kövi órán ezt lecseréjük az api hívásokra)**<br>
 `seed()` -> ebben hozzuk létre elemeket amiket majd elmentünk a localstorage-ba<br>
 `save()` -> ezzel mentjük meg a localstorage-ba az elemeket.
 
 ***inspect -> Application -> Local storage***<br>
 Ez a saját `localStorage`-om az adott böngészőben. Az itt eltárolt elemek megmaradnak például akkor is ha kikapcsoljuk a gépet és újra megnyitjuk (perzisztens adattárolás).
 
-Ha a construkrba bármikor ha meghívjuk egymás után a `seed()`-et és a `save()`-et akkor lényegében resetelni tudjuk a localStorage-ot
+Ha a construkrba bármikor meghívjuk egymás után a `seed()`-et és a `save()`-et akkor lényegében resetelni tudjuk a localStorage-ot
 
-Ehelyett mi most a load-ot fogjuk belerakni a construktorba. Ez azt csinálja, hogy a localstorage-ból kiszedji az elemeket. 
+Ehelyett mi most a `load()`-ot fogjuk belerakni a construktorba. Ez azt csinálja, hogy a localstorage-ból kiszedji az elemeket. 
+
 Ennél fontos hogy ne egy sima objektumként jelenjenek meg az elemek, hanem típusos ojbektumként  Ezt az `Object.Assign`-val csináljuk meg
 
 ```ts
