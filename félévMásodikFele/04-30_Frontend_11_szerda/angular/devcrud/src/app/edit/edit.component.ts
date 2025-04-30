@@ -21,7 +21,6 @@ export class EditComponent {
       // filter
       this.developer = developers.filter(x => x.id == param["id"])[0]
     })
-
   }
 
   save(): void {
