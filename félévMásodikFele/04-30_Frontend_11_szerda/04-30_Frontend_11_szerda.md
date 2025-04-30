@@ -4,7 +4,7 @@
 angular mappa: spa vs mpa and ajax.png
 
 ## spa vs mpa and ajax
- ![spaVmpa&ajax](vscode-vfs://github%2B7b2276223a312c22726566223a7b2274797065223a342c226964223a226d61696e227d7d/oli-tolnai/Frontend-bprof/f%C3%A9l%C3%A9vM%C3%A1sodikFele/04-30_Frontend_11_szerda/angular/spa-vs-mpa-and-ajax.png)
+![spaVmpa&ajax](https://github.com/user-attachments/assets/c9ca3eef-bddf-44f7-8b4d-24ca01c7b760)
 practice mappa: gyakorlófeladatok zh-hoz, exam-02.md zh leírás, sorrend ahhoz, hogyan csináljuk meg a feladatokat
 
 Angular előnye a komponensek.
