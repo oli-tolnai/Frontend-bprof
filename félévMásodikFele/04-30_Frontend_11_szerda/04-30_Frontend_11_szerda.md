@@ -237,7 +237,7 @@ Ha a construkrba bármikor meghívjuk egymás után a `seed()`-et és a `save()`
 
 Ehelyett mi most a `load()`-ot fogjuk belerakni a construktorba. Ez azt csinálja, hogy a localstorage-ból kiszedji az elemeket. 
 
-Ennél fontos hogy ne egy sima objektumként jelenjenek meg az elemek, hanem típusos ojbektumként  Ezt az `Object.Assign`-val csináljuk meg
+Ennél fontos hogy ne egy sima objektumként jelenjenek meg az elemek, hanem típusos ojbektumként  Ezt az `Object.assign()`-val csináljuk meg
 
 ```ts
 let data = JSON.parse(localStorage.getItem("bprof_devs") ?? "[]")
