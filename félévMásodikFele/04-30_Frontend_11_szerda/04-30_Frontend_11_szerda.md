@@ -1,70 +1,123 @@
 # Frontend 11 szerda 04-30
-# TANANYAG: Angular, Komponensek
+# TANANYAG: SPA, MPA és AJAX ábra + zh gyakorlás ismertető
 
 angular mappa: spa vs mpa and ajax.png
 
 ## spa vs mpa and ajax
 ![spaVmpa&ajax](https://github.com/user-attachments/assets/c9ca3eef-bddf-44f7-8b4d-24ca01c7b760)
-[practice mappa](https://github.com/oli-tolnai/Frontend-bprof/tree/main/f%C3%A9l%C3%A9vM%C3%A1sodikFele/04-30_Frontend_11_szerda/practice): gyakorlófeladatok zh-hoz, exam-02.md zh leírás, sorrend ahhoz, hogyan csináljuk meg a feladatokat
+
+---
+
+[practice: ](https://github.com/oli-tolnai/Frontend-bprof/tree/main/f%C3%A9l%C3%A9vM%C3%A1sodikFele/04-30_Frontend_11_szerda/practice) gyakorlófeladatok zh-hoz
+
+[exam-02.md: ](https://github.com/oli-tolnai/Frontend-bprof/blob/main/f%C3%A9l%C3%A9vM%C3%A1sodikFele/04-30_Frontend_11_szerda/exam-02.md) zh leírás + sorrend ahhoz, hogyan csináljuk meg a gyakorlófeladatokat
 
 
+<br><br>
 
+# TANANYAG: Angular, Komponensek
 
-Angular előnye a komponensek.
+*Angular előnye a komponensek.*
 
-az app mappa is  egy komponens. Alap komponens volt (előző órán) Három része van: html, css, js
+- Az `app` mappa is  egy komponens. Ez lényegében egy alap komponens (ezt használtuk előző órán)
+- Három része van: 
+    - html
+    - css
+    - js
 
 A Komponenseket többféleképpen is fel lehet használni.
 
-Kódból nagyon jól lehet generáltatni dolgokat. 
+Kódból nagyon jól lehet generáltatni dolgokat.
+
+### Például: 
+Alkalmazás legenerálása megszakítás nélkül:
+
+```bash
+ng new devcrud --standalone=false --skip-tests --style=sass --ssr=false
+```    
+
+- A kódban lehet használni [kapcsolókat](https://angular.dev/cli/generate/application)
+- Előző órán a teszt fájlt kitöröltük. Ennek létrehozását meg lehet előzni a `--skip-tests` kapcsolóval. 
+
+Ezután belépünk a létrehozott alkalmazás mappájába: 
+    
+```bash
+cd devcrud
+```
+
+**Tudunk kódokat is generálni angularral**<br>
+Például egy developer osztályt így hozunk létre:
+
+```bash
+ng generate class developer --skip-tests
+```
 
 
-alkalmazás legenerálása megszakítás nélkül:
-`ng new devcrud --standalone=false --skip-tests --style=sass --ssr=false`
+A kódban általában tudunk rövidíteni is:
 
-skip-tests: tesztek skippelése: ez egy kapcsoló
-kapcsolók dokumnteációja: https://angular.dev/cli/generate/application
+```bash
+ng g class developer --skip-tests
+```
 
-`cd devcrud`
+Class-t nem rövidítjük c-re, mert az a componens rövidítése ugyanis osztályt ritkán generálunk kódból
 
-kód generálás angularral: 
-`ng generate class developer --skip-tests`
-
-álalában rövidíthetőek:
-`ng g class developer --skip-tests`
 component = c
+
 generate = g
 
 
-különálló komponenesek
-C - create komponens
-R - list komponens
-U - edit komponens
-D - ehhez nem csinálunk külön komponenst
+### Az CRUD alkalmazásunkhoz különálló komponeneseket hozunk létre:
 
-`ng generate component create --skip-tests`
-`ng generate component list --skip-tests`
+- C - create komponens
+- R - list komponens
+- U - edit komponens
+- D - ehhez nem csinálunk külön komponenst (lejjebb kifejtjük miért)
+
+A három komponenst ezekkel a kódokkal hozhatjuk létre:<br>
+`ng generate component create --skip-tests`<br>
+`ng generate component list --skip-tests`<br>
 `ng generate component edit --skip-tests`
 
-terminálból több command lefuttatása:
-és jelekkel történik:
-`ng g class developer --skip-tests` && `ng g c create --skip-tests` && `ng g c list --skip-tests` && `ng g c edit --skip-tests` && code .
+**Terminálból akár több command-ot is lefuttathatunk egyszerre, ezeke az `&` karakterrel választjuk el egymástól:**<br>
 
-code . megnyitja
+Miden egybe így néz ki: 
+```bash
+ng new devcrud --standalone=false --skip-tests --style=sass --ssr=false && 
+cd devcrud &&
+ng g class developer --skip-tests && 
+ng g c create --skip-tests && 
+ng g c list --skip-tests && 
+ng g c edit --skip-tests && 
+code .
+```
+A `code .` egyből meg is nyitja 
 
-readme fájlba beleírta a kódót a siposm
+
+*app.component.html-ből kitöröltünk mindent*<br>
+Szerver indítása:
+```bash
+ng serve
+```
 
 
-app.component.html-ből kitöröltünk mindent
+### Mai feladat az hogy egy crud-os webalkalmazást létrehozzunk
+ - Egyenlőre localStorage-t használunk fetch api hívások helyett, és majd az api hívásokat is ki fogjuk tudni szervezni service-ekbe a kövi órán vesszük)
 
-`ng serve` - Szerver indítása
+![1.ábra](https://github.com/user-attachments/assets/7eb05ac2-366b-4d51-9e0d-9c92d27216b9)
 
-mai feladat:
-*1.ábra
 az api hívásokat ki tudjuk szervezni servicek-be ezt fogjuk a kövi órán megcsinálni
 
+1. Csináltunk egy footer komponenst
 
-`ng g c footer --skip-tests`
+    ```bash
+    ng g c footer --skip-tests
+    ```
+
+```bash
+ng g c footer --skip-tests
+```
+
+2. És csináltunk egy navigációs komponenst
 
 `ng g c nav --skip-tests` - navigációs elemek
 
