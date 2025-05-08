@@ -1,0 +1,33 @@
+
+@mixin border-radius()
+    border-radius: 20px
+    
+svg
+    width: 300px
+
+.wrapper
+    width: 800px
+    border: 5px solid #d96ff1
+    @include border-radius()
+    margin: 0 auto
+    text-align: center
+    padding: 30px
+
+.increments
+    background-color: #fafafa
+    border: 2px solid #abaaaa
+    @include border-radius()
+    padding: 10px 60px
+    margin-bottom: 30px
+
+    p
+        @include border-radius()
+        width: 300px
+        margin: 0 auto
+        margin-bottom: 10px
+
+.smaller
+    background-color: #ff8b8b
+
+.bigger
+    background-color: #c5fc86
