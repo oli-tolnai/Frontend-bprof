@@ -1,5 +1,5 @@
 # 8. TANANYAG CSS preprocesszorok 2025.04.09
-
+# Jobban jársz ha code-ban nézed ezt a jegyzetet
 többször előforduló értékek esetén pl ugyanaz a radius, color, akkor arra szoktunk törekedni, hogy ezeket az ismétlődő értékeket kiszervezzük változókba.
 
 A sima css is támogat már változó kezelést.
@@ -107,6 +107,53 @@ main.sass-ban:
 @import mixins.sass	
 Manapság már jobban preferálják inkább a @use-t
 ez csak akkor fogja hasznáni, ha ténylegesen kell
+
+# Összegzés:
+
+változók előtt $ jel:
+`$valtozo_deklaralas: #szín`
+`background-color: $valotoz_meghivasa`
+
+Mixinek (függvények):
+
+Lehet használni mixin létrehozásához a `&mixin fuggvenyNeve`-t és az `=` jelet is
+Meghívásakor lehet használni a `@inculde fuggvenyNeve`-t és a `+` jelet is
+
+Ezeknek lehet paramétereket is megadni. Vannak nem kötelező paraméterek, ahol van definiálva alapérték, de ha nincs definiállva alapérték akkor a meghíváskor mindenképp meg kell adni paraméternek valamit
+
+
+```sass
+@mixin button-color($param: primary)
+    @if $param == primary
+        background-color: $btnprimary_bgcolor
+    @else if $param == warning
+        background-color: $btnwarning_bgcolor
+    @else if $param == danger
+        background-color: $btndanger_bgcolor
+
+
+.btn
+    padding: 10px 20px
+    border: none
+    border-radius: 4px
+    color: $btn_color
+    cursor: pointer
+    margin-top: 10px
+
+    &-primary
+        @include button-color
+
+    &-warning
+        +button-color(warning)
+
+    &-danger
+        +button-color(danger)
+```
+
+
+
+
+
 
 ## 04-less mappa
 ** Az scss ugyanaz mint a Sass kivéve hogy ki van rakva a kapcsos zárójelek: {} és a pontosvesszők
